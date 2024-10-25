@@ -1,14 +1,31 @@
 // src/app/layout.tsx
 
-import './globals.css';
-import NavBar from '@/components/NavBar'; // Import the NavBar component
+import { Metadata } from "next";
+import "./globals.css";
+import Navbar from "@/components/NavBar";
+import AuthProvider from "../components/AuthProvider";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const metadata: Metadata = {
+  title: "SnapZoška",
+  description: "Created by Švikruha",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en">
+    <html lang="sk">
       <body>
-        {children}
-        <NavBar /> {/* Add the NavBar at the bottom */}
+        <AuthProvider>
+          <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+            <main style={{ flexGrow: 1 }}>
+              {children}
+            </main>
+          <Navbar /> 
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );
