@@ -5,7 +5,7 @@ import "./globals.css";
 import Navbar from "../components/NavBar";
 import AuthProvider from "../components/AuthProvider";
 import ThemeProvider from "../components/ThemeProvider";
-import ToggleThemeButton from "../components/ToggleThemeButton";
+
 
 export const metadata: Metadata = {
   title: "My Website",
