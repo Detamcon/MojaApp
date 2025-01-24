@@ -24,7 +24,11 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
         },
         typography: {
           fontFamily: "Roboto, Arial, sans-serif",
+          h1: {
+            fontSize: "3rem", 
+          },
         },
+          
       }),
     [mode]
   );
