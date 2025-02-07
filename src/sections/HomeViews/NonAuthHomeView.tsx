@@ -1,8 +1,9 @@
 import { Typography } from '@mui/material'
+import { Box } from '@mui/material'
 
 export default function NonAuthHomeView() {
     return (
-      <>
+      <Box sx={{ m: 2 }}>
         <Typography variant="h4" component="div" gutterBottom>
           <strong>Vitajte na ZoškaSnap</strong>
           <Typography variant="body1">
@@ -21,6 +22,6 @@ export default function NonAuthHomeView() {
             🚀 Zaregistrujte sa a začnite svoju cestu!
           </Typography>
       </Typography>
-      </>
+      </Box>
     )
 }

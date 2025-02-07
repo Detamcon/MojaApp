@@ -1,9 +1,10 @@
 import Typography from '@mui/material/Typography';
-
+import { Box } from '@mui/material'
 export const metadata = {title:" Podmienky | MojaAppl"};
 
 export default function TermsConditions() {
     return (
+        <Box sx={{ m: 2 }}>
         <Typography component="div">
         <Typography variant="h4" gutterBottom>
           <strong>Podmienky používania</strong>
@@ -79,5 +80,6 @@ export default function TermsConditions() {
           Naposledy aktualizované: 6. 7. 1921
         </Typography>
         </Typography>
+        </Box>
     );
 }

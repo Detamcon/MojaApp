@@ -1,11 +1,12 @@
 // src/app/gdpr/page.tsx
 
 import Typography from '@mui/material/Typography';
-
+import { Box } from '@mui/material'
 export const metadata = {title:" GDPR | MojaAppl"};
 
 export default function GDPR() {
     return (
+        <Box sx={{ m: 2 }}>
         <Typography component="div">
       <Typography variant="h4" gutterBottom>
         <strong>GDPR</strong>
@@ -69,5 +70,6 @@ export default function GDPR() {
         Posledná aktualizácia: 4. 5. 1865
       </Typography>
         </Typography>
+        </Box>
     );
 }

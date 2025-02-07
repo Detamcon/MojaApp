@@ -2,12 +2,13 @@
 
 import { useSession } from "next-auth/react"
 import { Typography } from '@mui/material'
+import { Box } from '@mui/material'
 
 export default function AuthHomeView() {
   const { data: session } = useSession()
 
   return (
-    <div>
+    <Box sx={{ m: 2 }}>
       <Typography variant="h4" component="div" gutterBottom>
         <strong>Vitajte, {session?.user?.name}!</strong>
         <Typography variant="body1">
@@ -26,6 +27,6 @@ export default function AuthHomeView() {
           🚀 Začnite objavovať teraz!
         </Typography>
       </Typography>
-    </div>
+    </Box>
   )
 }

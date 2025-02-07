@@ -1,11 +1,13 @@
 // src/app/o-nas/page.tsx
 
 import Typography from '@mui/material/Typography';
+import { Box } from '@mui/material'
 
 export const metadata = {title:" O nás | MojaAppl"};
 
 export default function About() {
     return (
+        <Box sx={{ m: 2 }}>
         <Typography component="div">
         <Typography variant="h4" gutterBottom>
           <strong>O nás</strong>
@@ -35,5 +37,6 @@ export default function About() {
           Pridajte sa k nám a buďte súčasťou budúcnosti sociálnych spojení!
         </Typography>
         </Typography>
+        </Box>
     );
 }
