@@ -5,19 +5,15 @@ import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { 
   Button, 
-  TextField, 
   Card, 
   CardContent,  
   Typography, 
-  Divider,
   Box
 } from '@mui/material'
 import GoogleIcon from '@mui/icons-material/Google'
 import Link from 'next/link'
 
 export default function SignInPage() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const router = useRouter()
 
@@ -28,8 +24,6 @@ export default function SignInPage() {
     try {
       const result = await signIn('credentials', {
         redirect: false,
-        email,
-        password,
       })
 
       if (result?.error) {
@@ -54,41 +48,15 @@ export default function SignInPage() {
             Sign In
           </Typography>
           <form onSubmit={handleEmailSignIn}>
-            <TextField
-              fullWidth
-              label="Email"
-              variant="outlined"
-              margin="normal"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <TextField
-              fullWidth
-              label="Password"
-              type="password"
-              variant="outlined"
-              margin="normal"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            
             {error && (
               <Typography color="error" variant="body2" align="center" sx={{ mt: 2 }}>
                 {error}
               </Typography>
             )}
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
+
           </form>
-          <Divider sx={{ my: 2 }}>OR</Divider>
+
           <Button 
             variant="outlined" 
             startIcon={<GoogleIcon />} 

@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 
 export default function NonAuthHomeView() {
     return (
-      <Box sx={{ m: 2 }}>
+      <Box sx={{ m: 2, textAlign: 'center' }}>
         <Typography variant="h4" component="div" gutterBottom>
           <strong>Vitajte na ZoškaSnap</strong>
           <Typography variant="body1">

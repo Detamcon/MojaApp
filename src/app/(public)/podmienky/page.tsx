@@ -4,7 +4,7 @@ export const metadata = {title:" Podmienky | MojaAppl"};
 
 export default function TermsConditions() {
     return (
-        <Box sx={{ m: 2 }}>
+        <Box sx={{ m: 2, textAlign: 'center' }}>
         <Typography component="div">
         <Typography variant="h4" gutterBottom>
           <strong>Podmienky používania</strong>

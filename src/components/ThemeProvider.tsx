@@ -41,7 +41,16 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
   return (
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
-      <IconButton onClick={toggleTheme} color="inherit">
+      <IconButton
+        onClick={toggleTheme}
+        color="inherit"
+        style={{
+          position: "fixed",
+          top: 16,
+          left: 16,
+          zIndex: 1000, 
+        }}
+      >
         {mode === "light" ? <Brightness4 /> : <Brightness7 />}
       </IconButton>
       {children}

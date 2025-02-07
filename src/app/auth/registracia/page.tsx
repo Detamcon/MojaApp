@@ -6,11 +6,9 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { 
   Button, 
-  TextField, 
   Card, 
   CardContent,  
   Typography, 
-  Divider,
   Box,
   FormControlLabel,
   Checkbox
@@ -18,8 +16,6 @@ import {
 import GoogleIcon from '@mui/icons-material/Google'
 
 export default function SignInPage() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [isChecked, setIsChecked] = useState(false)
   const router = useRouter()
@@ -37,8 +33,6 @@ export default function SignInPage() {
     try {
       const result = await signIn('credentials', {
         redirect: false,
-        email,
-        password,
       })
 
       if (result?.error) {
@@ -68,25 +62,7 @@ export default function SignInPage() {
             Register
           </Typography>
           <form onSubmit={handleEmailSignIn}>
-            <TextField
-              fullWidth
-              label="Email"
-              variant="outlined"
-              margin="normal"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <TextField
-              fullWidth
-              label="Password"
-              type="password"
-              variant="outlined"
-              margin="normal"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            
             
 
             {error && (
@@ -111,17 +87,7 @@ export default function SignInPage() {
               sx={{ mt: 1 }}
             />
 
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Register
-            </Button>
           </form>
-          <Divider sx={{ my: 2 }}>OR</Divider>
           <Button 
             variant="outlined" 
             startIcon={<GoogleIcon />} 

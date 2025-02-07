@@ -6,7 +6,7 @@ export const metadata = {title:" GDPR | MojaAppl"};
 
 export default function GDPR() {
     return (
-        <Box sx={{ m: 2 }}>
+        <Box sx={{ m: 2, textAlign: 'center' }}>
         <Typography component="div">
       <Typography variant="h4" gutterBottom>
         <strong>GDPR</strong>

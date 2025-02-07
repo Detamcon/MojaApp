@@ -8,7 +8,7 @@ export default function AuthHomeView() {
   const { data: session } = useSession()
 
   return (
-    <Box sx={{ m: 2 }}>
+    <Box sx={{ m: 2, textAlign: 'center' }}>
       <Typography variant="h4" component="div" gutterBottom>
         <strong>Vitajte, {session?.user?.name}!</strong>
         <Typography variant="body1">

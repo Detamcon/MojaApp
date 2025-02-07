@@ -7,7 +7,7 @@ export const metadata = {title:" O nás | MojaAppl"};
 
 export default function About() {
     return (
-        <Box sx={{ m: 2 }}>
+        <Box sx={{ m: 2, textAlign: 'center' }}>
         <Typography component="div">
         <Typography variant="h4" gutterBottom>
           <strong>O nás</strong>
