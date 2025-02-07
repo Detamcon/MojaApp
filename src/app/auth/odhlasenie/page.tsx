@@ -18,7 +18,7 @@ export default function SignOutPage() {
             Sign Out
           </Typography>
           <Typography variant="body1" align="center" sx={{ mb: 3 }}>
-            Are you sure you want to sign out?
+            Chcete sa odhlásiť?
           </Typography>
           <Button
             variant="contained"
