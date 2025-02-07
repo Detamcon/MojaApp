@@ -1,25 +1,26 @@
 import { Typography } from '@mui/material'
+
 export default function NonAuthHomeView() {
     return (
       <>
         <Typography variant="h4" component="div" gutterBottom>
-          <strong>Welcome to ZoškaSnap</strong>
+          <strong>Vitajte na ZoškaSnap</strong>
           <Typography variant="body1">
-            At  ZoškaSnap, we believe in bringing people closer together. Whether you&apos;re here to connect with friends, share your passions, or discover new communities, our platform is designed to make socializing easy, fun, and meaningful.
+            V ZoškaSnap veríme v zbližovanie ľudí. Či už ste tu na to, aby ste sa spojili s priateľmi, zdieľali svoje vášne, alebo objavovali nové komunity, naša platforma je navrhnutá tak, aby uľahčila, spríjemnila a dala zmysel socializácii.
           </Typography>
           <Typography variant="body1">
-            🌍 <strong>Connect</strong> with like-minded individuals. <br />
-            📸 <strong>Share</strong> your moments through posts, stories, and videos. <br />
-            💬 <strong>Engage</strong> in real-time conversations and discussions. <br />
-            🔎 <strong>Discover</strong> trending topics, events, and communities that matter to you.
+            🌍 <strong>Spojte sa</strong> s ľuďmi, ktorí majú rovnaké záujmy. <br />
+            📸 <strong>Zdieľajte</strong> svoje momenty prostredníctvom príspevkov, príbehov a videí. <br />
+            💬 <strong>Zapájajte sa</strong> do diskusií a rozhovorov v reálnom čase. <br />
+            🔎 <strong>Objavujte</strong> trending témy, udalosti a komunity, ktoré sú pre vás dôležité.
           </Typography>
           <Typography variant="body1">
-            Join us today and be part of a vibrant, inclusive, and exciting online space where your voice matters. <strong>Let&apos;s make social media more social!</strong>
+            Pridajte sa k nám dnes a staňte sa súčasťou dynamického, inkluzívneho a vzrušujúceho online priestoru, kde váš hlas má význam. <strong>Urobme sociálne médiá viac sociálnymi!</strong>
           </Typography>
           <Typography variant="h6" color="primary">
-            🚀 Sign up now and start your journey!
+            🚀 Zaregistrujte sa a začnite svoju cestu!
           </Typography>
       </Typography>
       </>
     )
-  }
+}

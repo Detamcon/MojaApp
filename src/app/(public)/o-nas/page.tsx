@@ -1,41 +1,39 @@
-
 // src/app/o-nas/page.tsx
 
 import Typography from '@mui/material/Typography';
 
-export const metadata = {title:" O nas | MojaAppl"};
+export const metadata = {title:" O nás | MojaAppl"};
 
 export default function About() {
     return (
         <Typography component="div">
         <Typography variant="h4" gutterBottom>
-          <strong>About Us</strong>
+          <strong>O nás</strong>
         </Typography>
         <Typography variant="body1">
-          At <strong>ZoškaSnap</strong>, we are passionate about creating a digital space where people can truly connect, share, and engage. Our mission is to bring communities together and make online interactions more meaningful.
+          V <strong>ZoškaSnap</strong> sme nadšení tvorbou digitálneho priestoru, kde sa ľudia môžu skutočne spojiť, zdieľať a zapájať. Našou misiou je zjednotiť komunity a urobiť online interakcie významnejšími.
         </Typography>
         <Typography variant="h5" gutterBottom>
-          Our Mission
+          Naša misia
         </Typography>
         <Typography variant="body1">
-          We believe social media should be more than just scrolling—it should be about real connections. That’s why we built a platform designed to empower you to:
+          Veríme, že sociálne médiá by mali byť viac než len scrollovaní—mali by byť o skutočných spojeniach. Preto sme vytvorili platformu, ktorá vás podporí v:
         </Typography>
         <Typography variant="body1">
-          🌍 <strong>Connect</strong> with people who share your interests. <br />
-          💡 <strong>Inspire</strong> and be inspired by fresh ideas and content. <br />
-          🔒 <strong>Stay Safe</strong> with a secure and welcoming environment. <br />
-          🚀 <strong>Grow</strong> your network and expand your influence.
+          🌍 <strong>Spojiť</strong> sa s ľuďmi, ktorí zdieľajú vaše záujmy. <br />
+          💡 <strong>Inšpirovať</strong> a byť inšpirovaní novými nápadmi a obsahom. <br />
+          🔒 <strong>Byť v bezpečí</strong> s bezpečným a vítajúcim prostredím. <br />
+          🚀 <strong>Rásť</strong> vo vašej sieti a rozširovať svoj vplyv.
         </Typography>
         <Typography variant="h5" gutterBottom>
-          Why Choose Us?
+          Prečo si vybrať nás?
         </Typography>
         <Typography variant="body1" >
-          Unlike other platforms, we focus on building **genuine relationships, fostering positivity, and ensuring user privacy.** Whether you want to share your journey, discover new communities, or just have fun, we’re here to make your experience enjoyable and rewarding.
+          Na rozdiel od iných platforiem sa zameriavame na budovanie **skutočných vzťahov, podporu pozitívnosti a zaručenie ochrany súkromia používateľov.** Či už chcete zdieľať svoju cestu, objavovať nové komunity, alebo sa jednoducho zabávať, sme tu, aby sme váš zážitok spravili príjemným a hodnotným.
         </Typography>
         <Typography variant="h6" color="primary">
-          Join us and be part of the future of social connection!
+          Pridajte sa k nám a buďte súčasťou budúcnosti sociálnych spojení!
         </Typography>
         </Typography>
     );
 }
-

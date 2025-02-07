@@ -8,67 +8,66 @@ export default function GDPR() {
     return (
         <Typography component="div">
       <Typography variant="h4" gutterBottom>
-        <strong>GDPR Compliance</strong>
+        <strong>GDPR</strong>
       </Typography>
 
       <Typography variant="body1">
-        At <strong>ZoškaSnap</strong>, we are committed to protecting your privacy and ensuring that your personal data is handled securely and in compliance with the General Data Protection Regulation (GDPR).
-      </Typography>
-
-      <Typography variant="h5" gutterBottom>
-        Your Rights Under GDPR
-      </Typography>
-      <Typography variant="body1">
-        As a user, you have the following rights regarding your personal data:
-      </Typography>
-      <Typography variant="body1">
-        - The right to access your personal data. <br />
-        - The right to request correction of inaccurate or incomplete data. <br />
-        - The right to request deletion of your data under certain conditions. <br />
-        - The right to restrict processing of your data. <br />
-        - The right to data portability, allowing you to obtain and reuse your data. <br />
-        - The right to object to the processing of your data for certain purposes. <br />
-        - The right to withdraw consent at any time, where processing is based on consent.
+        V spoločnosti <strong>ZoškaSnap</strong> sa zaväzujeme chrániť vaše súkromie a zabezpečiť, aby vaše osobné údaje boli spracovávané bezpečne a v súlade s Všeobecným nariadením o ochrane osobných údajov (GDPR).
       </Typography>
 
       <Typography variant="h5" gutterBottom>
-        Data Collection and Use
+        Vaše práva podľa GDPR
       </Typography>
       <Typography variant="body1">
-        We collect and process only the data necessary to provide our services. This includes:
+        Ako používateľ máte nasledujúce práva týkajúce sa vašich osobných údajov:
       </Typography>
       <Typography variant="body1">
-        - Account information such as name, email, and profile details. <br />
-        - Usage data to improve user experience and platform performance. <br />
-        - Cookies and similar tracking technologies for analytics and personalization. <br />
-        - Communications and support interactions.
+        - Právo na prístup k vašim osobným údajom. <br />
+        - Právo požiadať o opravu nepresných alebo neúplných údajov. <br />
+        - Právo požiadať o vymazanie vašich údajov za určitých podmienok. <br />
+        - Právo na obmedzenie spracovania vašich údajov. <br />
+        - Právo na prenosnosť údajov, ktoré vám umožňuje získať a znovu použiť vaše údaje. <br />
+        - Právo namietať proti spracovaniu vašich údajov na určité účely. <br />
+        - Právo odvolať súhlas kedykoľvek, ak je spracovanie založené na súhlase.
       </Typography>
 
       <Typography variant="h5" gutterBottom>
-        Data Security
+        Zber a používanie údajov
       </Typography>
       <Typography variant="body1">
-        We implement appropriate technical and organizational measures to protect your personal data from unauthorized access, loss, or misuse. This includes encryption, access controls, and regular security assessments.
+        Zhromažďujeme a spracovávame iba údaje nevyhnutné na poskytovanie našich služieb. To zahŕňa:
+      </Typography>
+      <Typography variant="body1">
+        - Informácie o účte ako meno, e-mail a detaily profilu. <br />
+        - Údaje o používaní na zlepšenie používateľskej skúsenosti a výkonu platformy. <br />
+        - Súbory cookies a podobné sledovacie technológie na analýzu a personalizáciu. <br />
+        - Komunikácie a interakcie s podporou.
       </Typography>
 
       <Typography variant="h5" gutterBottom>
-        Data Retention
+        Bezpečnosť údajov
       </Typography>
       <Typography variant="body1">
-        Your personal data is retained only for as long as necessary to fulfill the purposes for which it was collected, or as required by legal and regulatory obligations.
+        Zavádzame vhodné technické a organizačné opatrenia na ochranu vašich osobných údajov pred neoprávneným prístupom, stratou alebo zneužitím. To zahŕňa šifrovanie, kontrolu prístupu a pravidelné bezpečnostné hodnotenia.
       </Typography>
 
       <Typography variant="h5" gutterBottom>
-        Contact Us
+        Uchovávanie údajov
       </Typography>
       <Typography variant="body1">
-        If you have any questions about how we handle your data or wish to exercise your GDPR rights, please contact us at <strong>masurik1@gmail.com</strong>.
+        Vaše osobné údaje sú uchovávané iba po dobu, ktorá je nevyhnutná na splnenie účelov, na ktoré boli zhromaždené, alebo pokiaľ to vyžaduje právna a regulačná povinnosť.
+      </Typography>
+
+      <Typography variant="h5" gutterBottom>
+        Kontaktujte nás
+      </Typography>
+      <Typography variant="body1">
+        Ak máte akékoľvek otázky týkajúce sa spracovania vašich údajov alebo si prajete využiť svoje práva podľa GDPR, kontaktujte nás na <strong>masurik1@gmail.com</strong>.
       </Typography>
 
       <Typography variant="h6" color="primary">
-        Last updated: 4. 5. 1865
+        Posledná aktualizácia: 4. 5. 1865
       </Typography>
         </Typography>
     );
 }
-

@@ -95,10 +95,10 @@ export default function SignInPage() {
             onClick={handleGoogleSignIn}
             fullWidth
           >
-            Sign in with Google
+            Sign in s Google
           </Button>
           <Typography variant="body2" align="center" sx={{ mt: 2 }}>
-            Don&apos;t have an account?{' '}
+            Nemáte ešte účet?{' '}
             <Link href="/auth/registracia" style={{ color: '#1976d2', textDecoration: 'none' }}>
               Register
             </Link>

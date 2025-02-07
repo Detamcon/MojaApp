@@ -1,7 +1,3 @@
-
-// src/app/podmienky/page.tsx
-
-
 import Typography from '@mui/material/Typography';
 
 export const metadata = {title:" Podmienky | MojaAppl"};
@@ -10,77 +6,77 @@ export default function TermsConditions() {
     return (
         <Typography component="div">
         <Typography variant="h4" gutterBottom>
-          <strong>Terms and Conditions</strong>
+          <strong>Podmienky používania</strong>
         </Typography>
   
         <Typography variant="body1">
-          These Terms and Conditions govern your use of <strong>ZoškaSnap</strong>. By accessing or using our platform, you agree to comply with these terms. If you do not agree, you must discontinue use immediately.
-        </Typography>
-  
-        <Typography variant="h5" gutterBottom>
-          1. Account Registration
-        </Typography>
-        <Typography variant="body1">
-          - You must provide accurate and complete information when creating an account. <br />
-          - You are responsible for maintaining the security of your account and password. <br />
-          - We reserve the right to suspend or terminate accounts that violate these terms.
+          Tieto podmienky upravujú vaše používanie platformy <strong>ZoškaSnap</strong>. Prístupom alebo používaním našej platformy súhlasíte s týmito podmienkami. Ak nesúhlasíte, musíte okamžite prestať používať platformu.
         </Typography>
   
         <Typography variant="h5" gutterBottom>
-          2. Acceptable Use
+          1. Registrácia účtu
         </Typography>
         <Typography variant="body1">
-          - You agree to use the platform in a lawful manner. <br />
-          - You must not post harmful, illegal, or misleading content. <br />
-          - Any attempt to disrupt the platform or compromise security is strictly prohibited.
+          - Pri vytváraní účtu musíte poskytnúť presné a úplné informácie. <br />
+          - Ste zodpovední za zabezpečenie vášho účtu a hesla. <br />
+          - Vyhradzujeme si právo pozastaviť alebo zrušiť účty, ktoré porušujú tieto podmienky.
         </Typography>
   
         <Typography variant="h5" gutterBottom>
-          3. Privacy Policy
+          2. Akceptovateľné použitie
         </Typography>
         <Typography variant="body1">
-          Your use of <strong>ZoškaSnap</strong> is also governed by our <strong>Privacy Policy</strong>, which outlines how we collect, use, and protect your data.
+          - Súhlasíte s tým, že platformu budete používať zákonným spôsobom. <br />
+          - Nesmiete zverejňovať škodlivý, nezákonný alebo zavádzajúci obsah. <br />
+          - Akýkoľvek pokus o narušenie platformy alebo ohrozenie bezpečnosti je prísne zakázaný.
         </Typography>
   
         <Typography variant="h5" gutterBottom>
-          4. Intellectual Property
+          3. Zásady ochrany osobných údajov
         </Typography>
         <Typography variant="body1">
-          - All content and materials on the platform are the property of <strong>ZoškaSnap</strong> or its licensors. <br />
-          - You may not copy, distribute, or modify content without explicit permission.
+          Vaše používanie platformy <strong>ZoškaSnap</strong> sa riadi aj našimi <strong>Zásadami ochrany osobných údajov</strong>, ktoré popisujú, ako zbierame, používame a chránime vaše údaje.
         </Typography>
   
         <Typography variant="h5" gutterBottom>
-          5. Limitation of Liability
+          4. Duševné vlastníctvo
         </Typography>
         <Typography variant="body1">
-          - We are not responsible for any damages or losses resulting from the use of our platform. <br />
-          - We do not guarantee uninterrupted or error-free service.
+          - Všetok obsah a materiály na platforme sú majetkom <strong>ZoškaSnap</strong> alebo jeho licencovateľov. <br />
+          - Nemáte právo kopírovať, distribuovať ani upravovať obsah bez výslovného povolenia.
         </Typography>
   
         <Typography variant="h5" gutterBottom>
-          6. Termination
+          5. Obmedzenie zodpovednosti
         </Typography>
         <Typography variant="body1">
-          We reserve the right to suspend or terminate access to our platform at any time, with or without notice, for any violations of these Terms and Conditions.
+          - Nie sme zodpovední za žiadne škody alebo straty vzniknuté používaním našej platformy. <br />
+          - Nezaručujeme nepretržitú alebo bezchybné fungovanie služby.
         </Typography>
   
         <Typography variant="h5" gutterBottom>
-          7. Changes to Terms
+          6. Ukončenie
         </Typography>
         <Typography variant="body1">
-          We may update these Terms and Conditions from time to time. Continued use of the platform after changes are made constitutes acceptance of the revised terms.
+          Vyhradzujeme si právo pozastaviť alebo ukončiť prístup na našu platformu kedykoľvek, s alebo bez predchádzajúceho upozornenia, z akéhokoľvek dôvodu porušenia týchto podmienok.
         </Typography>
   
         <Typography variant="h5" gutterBottom>
-          8. Contact Information
+          7. Zmeny podmienok
         </Typography>
         <Typography variant="body1">
-          If you have any questions about these Terms and Conditions, please contact us at <strong>masurik1@gmail.com</strong>.
+          Tieto podmienky môžeme občas aktualizovať. Pokračovanie v používaní platformy po vykonaní zmien znamená akceptáciu revidovaných podmienok.
+        </Typography>
+  
+        <Typography variant="h5" gutterBottom>
+          8. Kontaktné informácie
+        </Typography>
+        <Typography variant="body1">
+          Ak máte akékoľvek otázky týkajúce sa týchto podmienok, kontaktujte nás na <strong>masurik1@gmail.com</strong>.
         </Typography>
   
         <Typography variant="h6" color="primary">
-          Last updated: 6. 7. 1921
+          Naposledy aktualizované: 6. 7. 1921
         </Typography>
         </Typography>
     );

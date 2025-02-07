@@ -28,6 +28,12 @@ export default function SignInPage() {
     e.preventDefault()
     setError('')
 
+
+    if (!isChecked) {
+      setError('Musíš súhlasiť s GDPR a Podmienkami na registráciu.')
+      return
+    }
+
     try {
       const result = await signIn('credentials', {
         redirect: false,
@@ -46,6 +52,11 @@ export default function SignInPage() {
   }
 
   const handleGoogleSignIn = () => {
+
+    if (!isChecked) {
+      setError('Musíš súhlasiť s GDPR a Podmienkami na registráciu.')
+      return
+    }
     signIn('google', { callbackUrl: '/' })
   }
 
@@ -76,13 +87,15 @@ export default function SignInPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+            
+
             {error && (
               <Typography color="error" variant="body2" align="center" sx={{ mt: 2 }}>
                 {error}
               </Typography>
             )}
             
-            {/* Checkbox to agree to terms */}
+
             <FormControlLabel
               control={
                 <Checkbox 
@@ -92,7 +105,7 @@ export default function SignInPage() {
               }
               label={
                 <Typography variant="body2">
-                  I agree to the <a href="/gdpr" target="_blank" style={{ color: '#1976d2', textDecoration: 'none' }}>GDPR</a> and <a href="/podmienky" target="_blank" style={{ color: '#1976d2', textDecoration: 'none' }}>Terms and conditions</a>
+                  Súhlasím s <a href="/gdpr" target="_blank" style={{ color: '#1976d2', textDecoration: 'none' }}>GDPR</a> a <a href="/podmienky" target="_blank" style={{ color: '#1976d2', textDecoration: 'none' }}>Podmienkami</a>
                 </Typography>
               }
               sx={{ mt: 1 }}
@@ -104,7 +117,6 @@ export default function SignInPage() {
               variant="contained"
               color="primary"
               sx={{ mt: 3, mb: 2 }}
-              disabled={!isChecked}
             >
               Register
             </Button>
@@ -115,14 +127,13 @@ export default function SignInPage() {
             startIcon={<GoogleIcon />} 
             onClick={handleGoogleSignIn}
             fullWidth
-            disabled={!isChecked}
           >
-            Register with Google
+            Register s Google
           </Button>
           
-          {/* Login redirect */}
+
           <Typography variant="body2" align="center" sx={{ mt: 2 }}>
-            Already have an account?{' '}
+            Máte už účet?{' '}
             <Link href="/auth/prihlasenie" style={{ color: '#1976d2', textDecoration: 'none' }}>
               Login
             </Link>
