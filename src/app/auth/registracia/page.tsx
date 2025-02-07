@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { 
   Button, 
   TextField, 
@@ -20,7 +21,7 @@ export default function SignInPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
-  const [isChecked, setIsChecked] = useState(false) // Checkbox state
+  const [isChecked, setIsChecked] = useState(false)
   const router = useRouter()
 
   const handleEmailSignIn = async (e: React.FormEvent) => {
@@ -89,10 +90,10 @@ export default function SignInPage() {
                   onChange={(e) => setIsChecked(e.target.checked)} 
                 />
               }
-              label= {
-              <Typography variant="body2">
-              I agree to the <a href="/gdpr" target="_blank" style={{ color: '#1976d2', textDecoration: 'none' }}>GDPR terms</a>
-            </Typography>
+              label={
+                <Typography variant="body2">
+                  I agree to the <a href="/gdpr" target="_blank" style={{ color: '#1976d2', textDecoration: 'none' }}>GDPR</a> and <a href="/podmienky" target="_blank" style={{ color: '#1976d2', textDecoration: 'none' }}>Terms and conditions</a>
+                </Typography>
               }
               sx={{ mt: 1 }}
             />
@@ -103,7 +104,7 @@ export default function SignInPage() {
               variant="contained"
               color="primary"
               sx={{ mt: 3, mb: 2 }}
-              disabled={!isChecked} // Disable button when unchecked
+              disabled={!isChecked}
             >
               Register
             </Button>
@@ -114,9 +115,18 @@ export default function SignInPage() {
             startIcon={<GoogleIcon />} 
             onClick={handleGoogleSignIn}
             fullWidth
+            disabled={!isChecked}
           >
-            Sign in with Google
+            Register with Google
           </Button>
+          
+          {/* Login redirect */}
+          <Typography variant="body2" align="center" sx={{ mt: 2 }}>
+            Already have an account?{' '}
+            <Link href="/auth/prihlasenie" style={{ color: '#1976d2', textDecoration: 'none' }}>
+              Login
+            </Link>
+          </Typography>
         </CardContent>
       </Card>
     </Box>

@@ -13,6 +13,7 @@ import {
   Box
 } from '@mui/material'
 import GoogleIcon from '@mui/icons-material/Google'
+import Link from 'next/link'
 
 export default function SignInPage() {
   const [email, setEmail] = useState('')
@@ -96,6 +97,12 @@ export default function SignInPage() {
           >
             Sign in with Google
           </Button>
+          <Typography variant="body2" align="center" sx={{ mt: 2 }}>
+            Don&apos;t have an account?{' '}
+            <Link href="/auth/registracia" style={{ color: '#1976d2', textDecoration: 'none' }}>
+              Register
+            </Link>
+          </Typography>
         </CardContent>
       </Card>
     </Box>
