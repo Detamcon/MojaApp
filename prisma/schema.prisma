@@ -9,6 +9,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id            String          @id @default(cuid())
+  name          String?
+  email         String          @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  authenticators Authenticator[]
+  posts         Post[]
+  likes         Like[]
+  profile       Profile?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 model Account {
   userId            String
   type              String
@@ -40,15 +57,6 @@ model Session {
   updatedAt DateTime @updatedAt
 }
 
-model VerificationToken {
-  identifier String
-  token      String
-  expires    DateTime
-
-  @@id([identifier, token])
-}
-
-// Optional for WebAuthn support
 model Authenticator {
   credentialID         String  @unique
   userId               String
@@ -64,31 +72,34 @@ model Authenticator {
   @@id([userId, credentialID])
 }
 
-model User {
-  id            String          @id @default(cuid())
-  name          String?
-  email         String          @unique
-  emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
-  Authenticator Authenticator[]
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  posts     Post[]
-  profile   Profile?
+  @@id([identifier, token])
 }
 
 model Post {
   id        String   @id @default(cuid())
   userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   imageUrl  String?
   caption   String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  likes     Like[]
+}
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+model Like {
+  id       String   @id @default(cuid())
+  postId   String
+  post     Post     @relation(fields: [postId], references: [id])
+  userId   String
+  user     User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@unique([postId, userId])
 }
 
 model Profile {

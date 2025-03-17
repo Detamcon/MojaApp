@@ -4,6 +4,7 @@
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { fetchPosts } from '@/app/actions/posts'; // Import the fetchPosts function
+import LikeButton from '@/components/LikeButton';
 
 export const metadata = { title: "Zoznam prispevkov | MojaAppl" };
 
@@ -47,7 +48,7 @@ export default async function PostsList() {
                 alt={post.caption ?? undefined}
                 style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }}
             />
-
+            <LikeButton postId={post.id} likes={post.likes} />
             <Typography variant='body2' sx={{ marginTop: '10px' }}>
               Posted by: {post.user?.name}
             </Typography>
