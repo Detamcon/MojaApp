@@ -1,30 +1,28 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { BottomNavigation, BottomNavigationAction, Box, Avatar } from "@mui/material";
+import { BottomNavigation, BottomNavigationAction, Box, Avatar, Menu, MenuItem } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import LoginIcon from "@mui/icons-material/Login";
 import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
-import LogoutIcon from "@mui/icons-material/Logout";
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import InfoIcon from '@mui/icons-material/Info';
-
 import { useRouter } from "next/navigation"; 
 import { useSession } from "next-auth/react"; 
 import { usePathname } from 'next/navigation'; 
 
 export default function Navbar() {
   const [value, setValue] = useState("/");
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null); // Ensure this is typed as HTMLElement | null
+  const [openMenu, setOpenMenu] = useState(false); // State for menu visibility
   const router = useRouter();
   const { data: session, status } = useSession();
   const pathname = usePathname(); 
 
-
   useEffect(() => {
     setValue(pathname); 
   }, [pathname]);
-
 
   useEffect(() => {
     if (status === "authenticated") {
@@ -37,6 +35,26 @@ export default function Navbar() {
     router.push(newValue);
   };
 
+  const handleProfileClick = (event: React.MouseEvent<HTMLElement>) => {
+    event.preventDefault(); // Prevent navigation when the profile icon is clicked
+    setAnchorEl(event.currentTarget); // Ensure this is correctly typed as HTMLElement
+    setOpenMenu(true); // Open the dropdown when profile is clicked
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    setOpenMenu(false); // Close the dropdown
+  };
+
+  const handleProfile = () => {
+    router.push("/profil"); // Navigate to Profile
+    handleMenuClose();
+  };
+
+  const handleLogout = () => {
+    router.push("/auth/odhlasenie"); // Navigate to logout
+    handleMenuClose();
+  };
 
   const privatePaths = [
     { label: "Domov", value: "/", icon: <HomeIcon /> },
@@ -50,8 +68,8 @@ export default function Navbar() {
       ) : (
         <Avatar>{session?.user?.name?.charAt(0) || "U"}</Avatar>
       ),
+      onClick: handleProfileClick, // Add onClick handler for profile to open dropdown
     },
-    { label: "Odhlásiť", value: "/auth/odhlasenie", icon: <LogoutIcon /> }, // Logout
   ];
 
   const publicPaths = [
@@ -60,7 +78,6 @@ export default function Navbar() {
     { label: "Registracia", value: "/auth/registracia", icon: <AppRegistrationIcon /> },
     { label: "Prihlásenie", value: "/auth/prihlasenie", icon: <LoginIcon /> },
   ];
-
 
   const navigationPaths = status === "authenticated" ? privatePaths : publicPaths;
 
@@ -73,9 +90,28 @@ export default function Navbar() {
             label={path.label}
             value={path.value}
             icon={path.icon}
+            onClick={path.onClick || undefined} // Add onClick only if defined
           />
         ))}
       </BottomNavigation>
+      
+      {/* Menu for Profile options */}
+      <Menu
+        anchorEl={anchorEl}
+        open={openMenu}
+        onClose={handleMenuClose}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+      >
+        <MenuItem onClick={handleProfile}>Profile</MenuItem>
+        <MenuItem onClick={handleLogout}>Logout</MenuItem>
+      </Menu>
     </Box>
   );
 }

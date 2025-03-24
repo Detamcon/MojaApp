@@ -1,11 +1,11 @@
-// src/app/profil/page.tsx
 
-import Typography from '@mui/material/Typography';
 
-export const metadata = {title:" Zoznam profilow | MojaAppl"};
+export const metadata = { title: "Zoznam profilov | MojaAppl" };
 
-export default function ProfileList() {
-    return (
-        <Typography variant='h1'>Tvoj profil</Typography>
-    );
+export default function ProfilePage() {
+  return (
+    <div>
+      <h1>Profil</h1>
+    </div>
+  );
 }

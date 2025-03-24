@@ -1,10 +1,9 @@
-
-// src/app/(private)/prispevok/page.tsx
-
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { fetchPosts } from '@/app/actions/posts'; // Import the fetchPosts function
 import LikeButton from '@/components/LikeButton';
+import CommentSection from '@/components/CommentSection';
+import BookmarkButton from '@/components/BookmarkButton';
 
 export const metadata = { title: "Zoznam prispevkov | MojaAppl" };
 
@@ -43,18 +42,27 @@ export default async function PostsList() {
             }}
           >
             <Typography variant='h5' sx={{ marginBottom: '10px' }}>{post.caption}</Typography>
-            <img
-                src={post.imageUrl ?? undefined}
-                alt={post.caption ?? undefined}
+
+            {/* Render Image Only if imageUrl is present */}
+            {post.imageUrl ? (
+              <img
+                src={post.imageUrl} // Ensure this is a valid URL
+                alt={post.caption || "Post Image"}
                 style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }}
-            />
-            <LikeButton postId={post.id} likes={post.likes.length} />
+              />
+            ) : (
+              <Typography variant='body2' sx={{ marginTop: '10px' }}>No image available</Typography>
+            )}
+
             <Typography variant='body2' sx={{ marginTop: '10px' }}>
               Posted by: {post.user?.name}
             </Typography>
             <Typography variant='body2'>
               Created at: {new Date(post.createdAt).toLocaleDateString()}
             </Typography>
+            <LikeButton postId={post.id} likes={post.likes.length} />
+            <BookmarkButton postId={post.id} />
+            <CommentSection postId={post.id} />
           </Box>
         ))}
       </Box>
