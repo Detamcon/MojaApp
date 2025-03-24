@@ -48,7 +48,7 @@ export default async function PostsList() {
                 alt={post.caption ?? undefined}
                 style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }}
             />
-            <LikeButton postId={post.id} likes={post.likes} />
+            <LikeButton postId={post.id} likes={post.likes.length} />
             <Typography variant='body2' sx={{ marginTop: '10px' }}>
               Posted by: {post.user?.name}
             </Typography>

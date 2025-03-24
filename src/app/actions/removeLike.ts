@@ -1,3 +1,4 @@
+"use server";
 import { prisma } from "@/app/api/auth/[...nextauth]/prisma";
 
 export const removeLike = async (postId: string, userId: string) => {

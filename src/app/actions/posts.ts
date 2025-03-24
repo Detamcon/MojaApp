@@ -1,5 +1,3 @@
-// src/app/actions/posts.ts
-
 "use server";
 
 // Import Prisma client
@@ -10,10 +8,17 @@ export const fetchPosts = async () => {
   try {
     const posts = await prisma.post.findMany({
       orderBy: { createdAt: "desc" },
-      include: { user: true }, // Include user who created the post
+      include: { 
+        user: { select: { name: true } }, // Fetch only user name to reduce data load
+        likes: true, // Ensure likes are always included
+      },
     });
 
-    return posts;
+    // Ensure `likes` is always an array
+    return posts.map(post => ({
+      ...post,
+      likes: post.likes ?? [], // If likes is undefined, set it to an empty array
+    }));
   } catch (error) {
     console.error("Error fetching posts:", error);
     throw new Error("Could not fetch posts");
@@ -26,9 +31,16 @@ export const fetchPostsByUserId = async (userId: string) => {
     const posts = await prisma.post.findMany({
       where: { userId },
       orderBy: { createdAt: "desc" },
+      include: { 
+        user: { select: { name: true } }, 
+        likes: true, 
+      },
     });
 
-    return posts;
+    return posts.map(post => ({
+      ...post,
+      likes: post.likes ?? [],
+    }));
   } catch (error) {
     console.error("Error fetching posts by userId:", error);
     throw new Error("Could not fetch posts");

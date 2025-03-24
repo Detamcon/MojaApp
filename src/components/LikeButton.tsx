@@ -15,7 +15,7 @@ const LikeButton: React.FC<LikeButtonProps> = ({ postId, likes }) => {
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(likes);
   const { data: session } = useSession();
-
+  console.log(session)
   useEffect(() => {
     if (session) {
       // Check if the user has already liked the post
